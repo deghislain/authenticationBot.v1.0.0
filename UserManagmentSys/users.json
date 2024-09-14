@@ -1,0 +1,22 @@
+[
+    {
+        "user_id": "57e8bca9-691d-44e6-b2d8-7413daeabdb1",
+        "username": "armelo",
+        "password": "21cb49cc8388447a9d98996c542817139abd072fd7c44364804de9ee6d8e435a",
+        "firstname": "melo",
+        "lastname": "melimelo",
+        "email": "melo@pm.me",
+        "phone_number": "+12586987254",
+        "address": "1 Larry, Bedford, Nova, M1L8K7"
+    },
+    {
+        "user_id": "46a77da8-92d3-43bd-a74f-d8dcb06d4475",
+        "username": "demelo",
+        "password": "15d8aeeef5be6aea7d47861d28ecd0bde7853e121f302cee485c1646a4dc12fc",
+        "firstname": "melo",
+        "lastname": "melimelo",
+        "email": "melo@pm.me",
+        "phone_number": "+14782587147",
+        "address": "1 bedford, Bedford, Nova, L1B4P1"
+    }
+]
