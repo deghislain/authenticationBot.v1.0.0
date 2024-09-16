@@ -12,7 +12,7 @@ IMAGE_ISSUES_MSG = ("Error: You did not pass the image verification process. Ple
 
 CREDENTIALS_ERROR_MSG = "Error: Invalid username or password. Type hi to try again"
 AUTHENTICATION_ERROR_MSG = "Error during the authentication process. Please, try again later or type hi to try again"
-SUCCESSFUL_MSG = "Authentication successfully completed."
+SUCCESSFUL_MSG = "Authentication successfully completed. Say hi to resume"
 
 
 def image_verification(username):

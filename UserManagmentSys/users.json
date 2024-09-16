@@ -18,5 +18,25 @@
         "email": "melo@pm.me",
         "phone_number": "+14782587147",
         "address": "1 bedford, Bedford, Nova, L1B4P1"
+    },
+    {
+        "user_id": "95bf4120-2dd7-42be-b815-05fa23c7f797",
+        "username": "demelo",
+        "password": "ee77442f5f2f6d8d3b26dbb08a92330109c8acde2f45281408421102b04f28bf",
+        "firstname": "melo",
+        "lastname": "mela",
+        "email": "mela@pm.me",
+        "phone_number": "+1471478147",
+        "address": "1 Bedford"
+    },
+    {
+        "user_id": "5161ff3f-02ed-46ab-a4ba-41d7d1bc036e",
+        "username": "demelo",
+        "password": "0e0fdd3c1914368a1db029dc15531899b03de2ad482d4633b3c592aff797c9b8",
+        "firstname": "melo",
+        "lastname": "mela",
+        "email": "mela@pm.me",
+        "phone_number": "+14785874147",
+        "address": "1 bedford"
     }
 ]
