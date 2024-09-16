@@ -1,3 +1,5 @@
+import re
+
 from tools import tools
 from prompts import SYSTEM_MESSAGE
 from login_service import login
@@ -5,6 +7,7 @@ import streamlit as st
 import os
 from groq import Groq
 import ast
+import json
 
 model_name = "llama-3.1-70b-versatile"
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
@@ -58,6 +61,34 @@ def update_chat_history(result):
     chat_history.extend(["", result])
 
 
+def send_result_login_back_to_model(tool_called):
+    args = ast.literal_eval(tool_called.function.arguments)
+    username = args['username']
+    password = args['password']
+
+    function_call_result_message = {
+        "role": "tool",
+        "content": json.dumps({
+            "username": username,
+            "password": password
+        }),
+        "tool_call_id": tool_called.id
+    }
+    mesg = st.session_state['messages']
+    mesg.append(function_call_result_message)
+
+    completion_payload = {
+        "model": model_name,
+        "messages": mesg
+    }
+    response = client.chat.completions.create(
+        model=completion_payload["model"],
+        messages=completion_payload["messages"]
+    )
+
+    return response
+
+
 input = st.chat_input("Say hi to start a new conversation")
 if input:
     result = ""
@@ -80,7 +111,12 @@ if input:
 
                 if tool_call.function.name == "user_authentication":
                     result = login(arguments)
-                    update_chat_history(result)
+                    if re.search('Error', result):
+                        update_chat_history(result)
+                    else:
+                        print("result", result)
+                        resp = send_result_login_back_to_model(tool_call)
+                        update_chat_history(resp.choices[0].message.content)
 
     except Exception as ex:
         print("Error while calling the model", ex)

@@ -7,12 +7,12 @@ from utilities import hash_password
 
 login_microservice_url = "http://127.0.0.1:8080/login"
 
-IMAGE_ISSUES_MSG = ("You did not pass the image verification process. Please ensure that your camera is activated,"
-                    "and that you are looking directly at it then say hi to resume")
+IMAGE_ISSUES_MSG = ("Error: You did not pass the image verification process. Please ensure that your camera is activated,"
+                    "and that you are looking directly at it then say hi to try again")
 
-CREDENTIALS_ERROR_MSG = "Invalid username or password. Say hi to retry"
-AUTHENTICATION_ERROR_MSG = "Error during the authentication process. Please, try again later. Say hi to retry"
-SUCCESSFUL_MSG = "Authentication successfully completed.Say hi to start a new conversation."
+CREDENTIALS_ERROR_MSG = "Error: Invalid username or password. Type hi to try again"
+AUTHENTICATION_ERROR_MSG = "Error during the authentication process. Please, try again later or type hi to try again"
+SUCCESSFUL_MSG = "Authentication successfully completed."
 
 
 def image_verification(username):
