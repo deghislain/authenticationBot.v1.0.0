@@ -12,6 +12,7 @@ username_microservice_url = "http://127.0.0.1:8080/username"
 MISSING_REQUIRED_INFO = "Error: Some required information are missing. Say hi to restart"
 SUCCESSFUL_MSG = "Congratulation for the creation of your new account. Say hi to start a new conversation"
 REGISTRATION_ERROR_MSG = "Error during the registration process. Please, try again later. Say hi to restart"
+USERNAME_UNAVAILABLE_MSG = "This username is already in use. Say hi to restart."
 
 
 def capture_user_picture():
@@ -38,10 +39,21 @@ def store_user(user):
     return result
 
 
+def check_username_availability(username):
+    response = requests.get(username_microservice_url, json={'username': f"""{username}"""})
+    if response and response.text == "Username available":
+        return True
+    else:
+        return False
+
+
 def create_new_account(arguments):
     print("create_new_account START")
     print(arguments)
     username = arguments["username"]
+    if not check_username_availability(username):
+        return USERNAME_UNAVAILABLE_MSG
+
     st.session_state['username'] = username
     first_name = arguments["first_name"]
     last_name = arguments["last_name"]
