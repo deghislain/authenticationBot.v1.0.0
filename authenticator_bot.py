@@ -166,6 +166,7 @@ if input:
                     result = login(arguments)
                     if re.search('Error', result):
                         update_chat_history(result)
+                        reset_messages()
                     else:
                         print("result", result)
                         resp = send_result_login_back_to_model(tool_call)
