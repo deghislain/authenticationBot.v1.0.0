@@ -18,5 +18,15 @@
         "email": "mela@pm.me",
         "phone_number": "+1478523214",
         "address": "1 bedford"
+    },
+    {
+        "user_id": "eb1f45a5-41e6-4b52-aa53-ccec61a841bc",
+        "username": "demelo",
+        "password": "bb26957a8673dac1e5709380f22402910bff2880d7915c3c4e9eeae011c89a74",
+        "firstname": "melo",
+        "lastname": "mela",
+        "email": "mela@pm.me",
+        "phone_number": "+147858741478",
+        "address": "the home"
     }
 ]

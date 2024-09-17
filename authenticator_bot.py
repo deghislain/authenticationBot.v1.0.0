@@ -166,7 +166,6 @@ if input:
                     result = login(arguments)
                     if re.search('Error', result):
                         update_chat_history(result)
-                        reset_messages()
                     else:
                         print("result", result)
                         resp = send_result_login_back_to_model(tool_call)
@@ -175,12 +174,12 @@ if input:
                     result = create_new_account(arguments)
                     if re.search('Error', result):
                         update_chat_history(result)
-                        reset_messages()
                     else:
                         print("sending result")
                         resp = send_result_registration_back_to_model(tool_call)
-                        reset_messages()
                         update_chat_history(result)
+
+                    reset_messages()
 
     except Exception as ex:
         print("Error while calling the model", ex)
